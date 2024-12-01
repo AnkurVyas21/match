@@ -1,6 +1,7 @@
+import { MatIconModule } from '@angular/material/icon';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { NgImageSliderModule } from 'ng-image-slider';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { Form1Component } from './form1/form1.component';
@@ -14,8 +15,10 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatCardModule } from '@angular/material/card';
+import { MatToolbarModule } from '@angular/material/toolbar';
 import { httpService } from './services/http.service';
 import { HttpClientModule } from '@angular/common/http';
+
 
 @NgModule({
   declarations: [
@@ -36,7 +39,10 @@ import { HttpClientModule } from '@angular/common/http';
     MatSelectModule,
     MatCardModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatToolbarModule,
+    MatIconModule,
+    NgImageSliderModule 
   ],
   providers: [httpService],
   bootstrap: [AppComponent]
