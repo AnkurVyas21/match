@@ -1,0 +1,179 @@
+
+<div>
+  <mat-card class="form-container">
+
+      <form [formGroup]="form" (ngSubmit)="onSubmit()">
+          <h2> Player Registration </h2>
+    
+        <!-- Name Input -->
+        <mat-form-field appearance="fill" class="full-width">
+          <mat-label>Full Name</mat-label>
+          <input matInput formControlName="name" placeholder="Enter your name" />
+          <mat-error *ngIf="form.get('name')?.hasError('required')">
+            Name is required
+          </mat-error>
+          <mat-error *ngIf="form.get('name')?.hasError('minlength')">
+            Name must be at least 3 characters
+          </mat-error>
+        </mat-form-field>
+
+          <!-- Address Input -->
+          <mat-form-field appearance="fill" class="full-width">
+              <mat-label>Address</mat-label>
+              <input matInput formControlName="address" placeholder="Enter your address" />
+              <mat-error *ngIf="form.get('address')?.hasError('required')">
+                Address is required
+              </mat-error>
+              <mat-error *ngIf="form.get('address')?.hasError('minlength')">
+                Address must be at least 3 characters
+              </mat-error>
+            </mat-form-field>
+
+      <!-- Mobile Number Input -->
+  <mat-form-field appearance="fill" class="full-width">
+      <mat-label>Mobile Number</mat-label>
+      <input
+        matInput
+        formControlName="mobile"
+        placeholder="Enter your mobile number"
+        type="tel"
+      />
+      <mat-error *ngIf="form.get('mobile')?.hasError('required')">
+        Mobile number is required
+      </mat-error>
+      <mat-error *ngIf="form.get('mobile')?.hasError('pattern')">
+        Enter a valid 10-digit mobile number
+      </mat-error>
+    </mat-form-field>
+    
+        <!-- Role Input -->
+        <mat-form-field appearance="fill" class="full-width">
+          <mat-label> Playing Role </mat-label>
+          <mat-select formControlName="role" placeholder="Select your role">
+            <mat-option *ngFor="let role of roles" [value]="role" (onSelectionChange)="selectionChange()">
+              {{ role }}
+            </mat-option>
+          </mat-select>
+          <mat-error *ngIf="form.get('role')?.hasError('required')">
+            Playing Role is required
+          </mat-error>
+        </mat-form-field>
+        
+
+             <!-- batting Input -->
+             <mat-form-field appearance="fill" class="full-width">
+              <mat-label>Batting Handedness</mat-label>
+              <mat-select formControlName="batting_handedness" placeholder="Select your role" >
+                <mat-option *ngFor="let hand of handedness" [value]="hand" >
+                  {{ hand }}
+                </mat-option>
+              </mat-select>
+              <mat-error *ngIf="form.get('batting_handedness')?.hasError('required')">
+                Bowling Handedness is required
+              </mat-error>
+            </mat-form-field>
+        
+            
+                 <!-- bowling Input -->
+        <mat-form-field appearance="fill" class="full-width">
+          <mat-label>Bowling Handedness</mat-label>
+          <mat-select formControlName="bowling_handedness" placeholder="Select your role" >
+            <mat-option *ngFor="let hand of handedness" [value]="hand" >
+              {{ hand }}
+            </mat-option>
+          </mat-select>
+          <mat-error *ngIf="form.get('bowling_handedness')?.hasError('required')">
+            Batting Handedness is required
+          </mat-error>
+        </mat-form-field>
+
+
+           <!-- Jersy Name Input -->
+           <mat-form-field appearance="fill" class="full-width">
+            <mat-label>Jersy Name</mat-label>
+            <input matInput formControlName="j_name" placeholder="Enter your name"  />
+            <mat-error *ngIf="form.get('j_name')?.hasError('required')">
+              Jersy Name is required
+            </mat-error>
+            <mat-error *ngIf="form.get('j_name')?.hasError('minlength')">
+              Jersy Name must be at least 3 characters
+            </mat-error>
+          </mat-form-field>
+  
+        
+             <!-- hand Input -->
+             <mat-form-field appearance="fill" class="full-width">
+              <mat-label>Jersy Size</mat-label>
+              <mat-select formControlName="j_size" placeholder="Select your role">
+                <mat-option *ngFor="let size of j_size" [value]="size">
+                  {{ size }}
+                </mat-option>
+              </mat-select>
+              <mat-error *ngIf="form.get('j_size')?.hasError('required')">
+                Jersy Size is required
+              </mat-error>
+            </mat-form-field>
+    
+        <!-- Jersy number Input -->
+        <mat-form-field appearance="fill" class="full-width">
+          <mat-label>Jersy Number</mat-label>
+          <input matInput formControlName="j_number" placeholder="Enter your name" type="number" max="999" />
+          <mat-error *ngIf="form.get('j_number')?.hasError('required')">
+            Jersy Number is required
+          </mat-error>
+          <mat-error *ngIf="form.get('j_number')?.hasError('max')">
+            Jersey Number must not exceed three digits
+          </mat-error>
+        </mat-form-field>
+
+
+
+   <!-- type Input -->
+   <mat-form-field appearance="fill" class="full-width">
+    <mat-label>Jersy Type</mat-label>
+    <mat-select formControlName="j_type" placeholder="Select your role">
+      <mat-option *ngFor="let type of jtype" [value]="type">
+        {{ type }}
+      </mat-option>
+    </mat-select>
+    <mat-error *ngIf="form.get('j_type')?.hasError('required')">
+      Jersy Type is required
+    </mat-error>
+  </mat-form-field>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+             <!-- UTI/UTR reference -->
+             <mat-form-field appearance="fill" class="full-width">
+              <mat-label>UTR/UPI Reference Number</mat-label>
+              <input matInput formControlName="utr" placeholder="Enter UTR/UPI reference number" />
+              <mat-error *ngIf="form.get('utr')?.hasError('required')">
+                Address is required
+              </mat-error>
+            </mat-form-field>
+
+     
+        <!-- Submit Button -->
+        <button mat-raised-button color="primary" type="submit" [disabled]="form.invalid">
+          Submit
+        </button>
+      </form>
+    </mat-card>
+ </div>

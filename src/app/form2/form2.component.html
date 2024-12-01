@@ -1,0 +1,77 @@
+
+   <div>
+    <mat-card class="form-container">
+  
+        <form [formGroup]="form" (ngSubmit)="onSubmit()">
+            <h2> Franchise Registration </h2>
+      
+          <!-- Name Input -->
+          <mat-form-field appearance="fill" class="full-width">
+            <mat-label>Full Name</mat-label>
+            <input matInput formControlName="name" placeholder="Enter your name" />
+            <mat-error *ngIf="form.get('name')?.hasError('required')">
+              Name is required
+            </mat-error>
+            <mat-error *ngIf="form.get('name')?.hasError('minlength')">
+              Name must be at least 3 characters
+            </mat-error>
+          </mat-form-field>
+
+            <!-- Address Input -->
+            <mat-form-field appearance="fill" class="full-width">
+                <mat-label>Address</mat-label>
+                <input matInput formControlName="address" placeholder="Enter your address" />
+                <mat-error *ngIf="form.get('address')?.hasError('required')">
+                  Address is required
+                </mat-error>
+                <mat-error *ngIf="form.get('address')?.hasError('minlength')">
+                  Address must be at least 3 characters
+                </mat-error>
+              </mat-form-field>
+
+        <!-- Mobile Number Input -->
+    <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Mobile Number</mat-label>
+        <input
+          matInput
+          formControlName="contact"
+          placeholder="Enter your mobile number"
+          type="tel"
+        />
+        <mat-error *ngIf="form.get('contact')?.hasError('required')">
+          Mobile number is required
+        </mat-error>
+        <mat-error *ngIf="form.get('contact')?.hasError('pattern')">
+          Enter a valid 10-digit mobile number
+        </mat-error>
+      </mat-form-field>
+      
+          <!-- Email Input -->
+          <mat-form-field appearance="fill" class="full-width">
+            <mat-label>Email ID</mat-label>
+            <input matInput formControlName="email" placeholder="Enter your email" />
+            <mat-error *ngIf="form.get('email')?.hasError('required')">
+              Email is required
+            </mat-error>
+            <mat-error *ngIf="form.get('email')?.hasError('email')">
+              Enter a valid email
+            </mat-error>
+          </mat-form-field>
+      
+               <!-- UTI/UTR reference -->
+               <mat-form-field appearance="fill" class="full-width">
+                <mat-label>UTR/UPI Reference Number</mat-label>
+                <input matInput formControlName="utr" placeholder="Enter UTR/UPI reference number" />
+                <mat-error *ngIf="form.get('utr')?.hasError('required')">
+                  Address is required
+                </mat-error>
+              </mat-form-field>
+
+       
+          <!-- Submit Button -->
+          <button mat-raised-button color="primary" type="submit" [disabled]="form.invalid">
+            Submit
+          </button>
+        </form>
+      </mat-card>
+   </div>

@@ -1,0 +1,19 @@
+div{
+    background-color: aqua;
+    padding: 10px;
+}
+ul {
+    display: flex;
+    list-style-type: none;
+}
+
+li {
+    margin-left: 40px;
+    font-size: large;
+}
+
+li:hover{
+    text-decoration: underline;
+    font-weight: bold;
+    cursor: pointer;
+}
