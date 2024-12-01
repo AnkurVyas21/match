@@ -18,7 +18,11 @@ import { MatCardModule } from '@angular/material/card';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { httpService } from './services/http.service';
 import { HttpClientModule } from '@angular/common/http';
-
+import { Table1Component } from './table1/table1.component';
+import { Table2Component } from './table2/table2.component';
+import {MatTableModule} from '@angular/material/table';
+import { FooterComponent } from './footer/footer.component';
+import {MatTooltipModule} from '@angular/material/tooltip';
 
 @NgModule({
   declarations: [
@@ -27,7 +31,10 @@ import { HttpClientModule } from '@angular/common/http';
     Form1Component,
     Form2Component,
     Form3Component,
-    HeaderComponent
+    HeaderComponent,
+    Table1Component,
+    Table2Component,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
@@ -42,7 +49,9 @@ import { HttpClientModule } from '@angular/common/http';
     HttpClientModule,
     MatToolbarModule,
     MatIconModule,
-    NgImageSliderModule 
+    NgImageSliderModule,
+    MatTableModule ,
+    MatTooltipModule
   ],
   providers: [httpService],
   bootstrap: [AppComponent]

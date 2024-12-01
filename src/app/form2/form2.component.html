@@ -1,5 +1,14 @@
 
-   <div>
+    <div class="container">
+      <div>
+      <div class="qrcode">
+        <img src="https://www.researchgate.net/profile/Vinod-Shukla/publication/340398294/figure/fig3/AS:876175308103681@1585907880294/Sample-Figure-of-QR-Code-QR-code-works-in-a-simple-way-It-all-starts-of-by-feeding-in.ppm">
+        <div style="margin-top: 10px;">Scan and pay to get UTR/UPI Reference Number</div>
+       </div>
+       </div>
+
+
+       <div>
     <mat-card class="form-container">
   
         <form [formGroup]="form" (ngSubmit)="onSubmit()">
@@ -63,7 +72,7 @@
                 <mat-label>UTR/UPI Reference Number</mat-label>
                 <input matInput formControlName="utr" placeholder="Enter UTR/UPI reference number" />
                 <mat-error *ngIf="form.get('utr')?.hasError('required')">
-                  Address is required
+                  UTR/UPI Reference Number is required
                 </mat-error>
               </mat-form-field>
 
@@ -74,4 +83,5 @@
           </button>
         </form>
       </mat-card>
+   </div>
    </div>

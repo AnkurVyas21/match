@@ -1,0 +1,27 @@
+.table {
+    margin: 20px;
+}
+
+.search {
+    margin: 20px;
+    display: flex;
+    margin-right: 55px;
+}
+
+.download{
+    margin-top: 20px;
+    margin-left: 50px;
+}
+.download :hover {
+    text-decoration: underline;
+    cursor: pointer;
+    color: blue;
+}
+
+.no-results {
+    text-align: center;
+    color: #999;
+    font-style: italic;
+    margin: 20px 0;
+  }
+  

@@ -1,5 +1,5 @@
 .topHeader      {
-    background-color: rgb(0, 0, 0);
+    background-color: rgb(137, 135, 135);
     color: white;
    display: flex;
    justify-content: space-between;
@@ -18,7 +18,7 @@
     margin-right: 25px;
 }
 
-.socialMedia i {
+.socialMedia a {
     margin-left: 15px;
 }
 
@@ -36,7 +36,6 @@
   }
 
   .logoImage{
-        width: 100%;
-        height: auto;
-        object-fit: cover; /* Ensure the image fits nicely */
+        height: 20px;
+        width: 20px;
   }

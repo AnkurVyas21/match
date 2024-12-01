@@ -1,0 +1,102 @@
+<div class="search">
+  <form [formGroup]="form">
+    <mat-form-field>
+      <mat-label>Search</mat-label>
+      <input matInput type="text" formControlName="search" (input)="searchFilter()"> 
+    </mat-form-field>
+   
+  </form>
+  <div class="download" (click)="downloadFile()" matTooltip="Download XML file">
+    <a class="fa fa-download"> Download</a>
+</div>
+</div>
+
+
+<div class="table">
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+      <!-- Position Column -->
+      <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef> No. </th>
+        <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+      </ng-container>
+    
+      <!-- Name Column -->
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef> Name </th>
+        <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+      </ng-container>
+    
+      <!-- Weight Column -->
+      <ng-container matColumnDef="address">
+        <th mat-header-cell *matHeaderCellDef> Weight </th>
+        <td mat-cell *matCellDef="let element"> {{element.address}} </td>
+      </ng-container>
+    
+      <!-- Symbol Column -->
+      <ng-container matColumnDef="mobile">
+        <th mat-header-cell *matHeaderCellDef> Symbol </th>
+        <td mat-cell *matCellDef="let element"> {{element.mobile}} </td>
+      </ng-container>
+
+
+         <!-- Symbol Column -->
+         <ng-container matColumnDef="role">
+          <th mat-header-cell *matHeaderCellDef> Symbol </th>
+          <td mat-cell *matCellDef="let element"> {{element.role}} </td>
+        </ng-container>
+    
+        
+           <!-- Symbol Column -->
+      <ng-container matColumnDef="batting_handedness">
+        <th mat-header-cell *matHeaderCellDef> Symbol </th>
+        <td mat-cell *matCellDef="let element"> {{element.batting_handedness}} </td>
+      </ng-container>
+    
+    
+              <!-- Symbol Column -->
+              <ng-container matColumnDef="bowling_handedness">
+                <th mat-header-cell *matHeaderCellDef> Symbol </th>
+                <td mat-cell *matCellDef="let element"> {{element.bowling_handedness}} </td>
+              </ng-container>
+    
+                      <!-- Symbol Column -->
+      <ng-container matColumnDef="j_name">
+        <th mat-header-cell *matHeaderCellDef> Symbol </th>
+        <td mat-cell *matCellDef="let element"> {{element.j_name}} </td>
+      </ng-container>
+    
+              <!-- Symbol Column -->
+              <ng-container matColumnDef="j_size">
+                <th mat-header-cell *matHeaderCellDef> Symbol </th>
+                <td mat-cell *matCellDef="let element"> {{element.j_size}} </td>
+              </ng-container>
+    
+                      <!-- Symbol Column -->
+      <ng-container matColumnDef="j_number">
+        <th mat-header-cell *matHeaderCellDef> Symbol </th>
+        <td mat-cell *matCellDef="let element"> {{element.j_number}} </td>
+      </ng-container>
+    
+              <!-- Symbol Column -->
+              <ng-container matColumnDef="j_type">
+                <th mat-header-cell *matHeaderCellDef> Symbol </th>
+                <td mat-cell *matCellDef="let element"> {{element.j_type}} </td>
+              </ng-container>
+    
+                      <!-- Symbol Column -->
+      <ng-container matColumnDef="utr">
+        <th mat-header-cell *matHeaderCellDef> Symbol </th>
+        <td mat-cell *matCellDef="let element"> {{element.utr}} </td>
+      </ng-container>
+            
+    
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+</div>
+
+  <!-- No Results Message -->
+  <div *ngIf="dataSource.data.length === 0" class="no-results">
+    No results found.
+  </div>
