@@ -51,7 +51,7 @@ export class Table1Component implements OnInit {
   {
     let uri = null;
   let APIparams = {
-    apiKey: 'franchise',
+    apiKey: 'franchises',
     uri: uri,
   };
   this.http.get(APIparams).subscribe((ServerRes) => {
