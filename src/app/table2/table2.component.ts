@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { MatTableDataSource } from '@angular/material/table';
 import * as XLSX from 'xlsx';
+import { httpService } from '../services/http.service';
 
 @Component({
   selector: 'app-table2',
@@ -51,7 +52,7 @@ export class Table2Component {
     ]
   };
 
-  constructor(private formBuilder: FormBuilder) {
+  constructor(private formBuilder: FormBuilder, private http:httpService) {
     this.form = this.formBuilder.group({
       search: ['']
     });
@@ -59,6 +60,21 @@ export class Table2Component {
 
   ngOnInit(): void {
     this.dataSource.data = this.data.players; // Initialize table data
+    this.getData()
+  }
+
+  getData()
+  {
+    let uri = null;
+  let APIparams = {
+    apiKey: 'players  ',
+    uri: uri,
+  };
+  this.http.get(APIparams).subscribe((ServerRes) => {
+    if (ServerRes.success === true) {
+      
+    }
+  });
   }
 
   searchFilter(): void {
@@ -71,8 +87,6 @@ export class Table2Component {
     );
 
     this.dataSource.data = filteredPlayers; // Update the table data
-    console.log(filteredPlayers);
-    console.log(this.dataSource.data);
   }
 
   downloadFile(): void {

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { MatTableDataSource } from '@angular/material/table';
 import * as XLSX from 'xlsx';
+import { httpService } from '../services/http.service';
 
 @Component({
   selector: 'app-table1',
@@ -34,7 +35,7 @@ export class Table1Component implements OnInit {
     ]
   };
 
-  constructor(private fb:FormBuilder)
+  constructor(private fb:FormBuilder, private http:httpService)
   {
     this.form = this.fb.group({
       search:['']
@@ -43,6 +44,21 @@ export class Table1Component implements OnInit {
 
   ngOnInit(): void {
     this.dataSource.data = this.data.franchises; // Initialize the data source
+    this.getData( )
+  }
+
+  getData()
+  {
+    let uri = null;
+  let APIparams = {
+    apiKey: 'franchise',
+    uri: uri,
+  };
+  this.http.get(APIparams).subscribe((ServerRes) => {
+    if (ServerRes.success === true) {
+      
+    }
+  });
   }
 
   searchFilter(): void {
@@ -55,36 +71,7 @@ export class Table1Component implements OnInit {
     this.dataSource.data = filteredFranchises; // Update table data
   }
 
-  // downloadFile(): void {
-   
-  //   const xmlContent = this.convertToXML(this.dataSource.data);
 
-   
-  //   const blob = new Blob([xmlContent], { type: 'application/xml' });
-  //   const url = window.URL.createObjectURL(blob);
-
-  //   const a = document.createElement('a');
-  //   a.href = url;
-  //   a.download = 'table_data.xml'; 
-  //   a.click();
-
-  //   window.URL.revokeObjectURL(url);
-  // }
-
-  // private convertToXML(data: any[]): string {
-  //   let xml = '<?xml version="1.0" encoding="UTF-8"?>\n<franchises>\n';
-
-  //   data.forEach((item) => {
-  //     xml += '  <franchise>\n';
-  //     for (const key in item) {
-  //       xml += `    <${key}>${item[key]}</${key}>\n`;
-  //     }
-  //     xml += '  </franchise>\n';
-  //   });
-
-  //   xml += '</franchises>';
-  //   return xml;
-  // }
 
   downloadFile(): void {
     const worksheet = XLSX.utils.json_to_sheet(this.dataSource.data); // Convert data to worksheet
