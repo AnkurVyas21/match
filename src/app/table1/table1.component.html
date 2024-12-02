@@ -1,12 +1,12 @@
 <div class="search">
-  <form [formGroup]="form">
-    <mat-form-field>
-      <mat-label>Search</mat-label>
+  <form [formGroup]="form" >
+    <mat-form-field >
+      <mat-label >Search</mat-label>
       <input matInput type="text" formControlName="search" (input)="searchFilter()"> 
     </mat-form-field>
   </form>
   <div class="download" (click)="downloadFile()" matTooltip="Download XML file">
-    <a class="fa fa-download"> Download</a>
+    <a class="fa fa-download"> Export</a>
   </div>
 </div>
 
@@ -44,7 +44,7 @@
 
     <!-- UTR Column -->
     <ng-container matColumnDef="utr">
-      <th mat-header-cell *matHeaderCellDef> UTR </th>
+      <th mat-header-cell *matHeaderCellDef> UTR/UPI Reference Number </th>
       <td mat-cell *matCellDef="let element"> {{element.utr}} </td>
     </ng-container>
 

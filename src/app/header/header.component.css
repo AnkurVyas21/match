@@ -1,25 +1,32 @@
 .topHeader      {
-    background-color: rgb(137, 135, 135);
+  /* background: linear-gradient(to right, black, red); */
+  background: linear-gradient(to right, rgb(0, 0, 6), #182046); 
     color: white;
    display: flex;
    justify-content: space-between;
-   align-items: center;
    height: 2rem;
+   font-size: 15px;
+  margin-bottom: 0.10rem;
 }
 
-.icon {
-    flex: 1;
-    text-align: center;
+
+
+.icon a {
+  margin-left: 20px;
+  color: white;
+  text-decoration: none ;
 }
 
 .socialMedia{
     display: flex; 
   justify-content: flex-end; 
     margin-right: 25px;
+    align-items: center;
 }
 
 .socialMedia a {
     margin-left: 15px;
+    color: white  ;
 }
 
 .spacer {
@@ -36,6 +43,110 @@
   }
 
   .logoImage{
-        height: 20px;
-        width: 20px;
+        height: 80px;
+        width: 100px;
   }
+
+  .secondTopHeader {
+    background: linear-gradient(to right, rgb(0, 1, 6), #263574); /* Gradient from black to red */
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 6rem;
+  }
+  
+
+  .secondTopHeader div {
+    display: flex;
+    align-items: center; /* Vertically centers the content within the div */
+  }
+
+
+
+
+
+  /* //responsive css */
+
+
+  /* General Mobile Styles */
+@media screen and (max-width: 768px) {
+  /* Top Header Adjustments */
+  .topHeader {
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center;
+    height: auto; /* Allow height to adjust */
+    text-align: center;
+    padding: 0.5rem 0;
+    font-size: 14px;
+  }
+
+  .icon {
+    margin-bottom: 0.5rem; /* Add spacing between sections */
+  }
+
+  .icon a {
+    margin-left: 0; /* Remove margin for better centering */
+    display: block; /* Stack links vertically */
+    margin-bottom: 0.2rem; /* Add spacing */
+  }
+
+  .socialMedia {
+    justify-content: center;
+    margin: 0; /* Remove extra margin */
+  }
+
+  .socialMedia a {
+    margin: 0 10px; /* Adjust spacing between icons */
+  }
+
+  /* Second Header Adjustments */
+  .secondTopHeader {
+    flex-direction: column; /* Stack content */
+    align-items: center; /* Center-align items */
+    height: auto; /* Allow height to adjust */
+    text-align: center;
+    padding: 1rem 0;
+  }
+
+  .secondTopHeader div {
+    flex-direction: column; /* Stack items vertically */
+    gap: 1rem; /* Add spacing between elements */
+  }
+
+  .logoImage {
+    height: 50px; /* Reduce logo size */
+    width: 70px;
+    margin-bottom: 0.5rem; /* Add spacing below logo */
+  }
+
+  .secondTopHeader button {
+    margin: 0.3rem 0; /* Add spacing between buttons */
+    font-size: 14px; /* Adjust font size for better fit */
+  }
+
+  /* Adjust buttons for smaller screens */
+  button.active {
+    font-size: 14px;
+  }
+}
+
+/* Further adjustments for very small screens */
+@media screen and (max-width: 480px) {
+  .topHeader {
+    font-size: 12px; /* Reduce font size */
+    padding: 0.5rem 0.2rem; /* Reduce padding */
+  }
+
+  .socialMedia a {
+    margin: 0 5px; /* Further reduce spacing */
+  }
+
+  .secondTopHeader span {
+    font-size: 20px; /* Reduce title size */
+  }
+
+  .secondTopHeader button {
+    font-size: 12px; /* Reduce button font size */
+  }
+}

@@ -23,7 +23,7 @@ import { Table2Component } from './table2/table2.component';
 import {MatTableModule} from '@angular/material/table';
 import { FooterComponent } from './footer/footer.component';
 import {MatTooltipModule} from '@angular/material/tooltip';
-
+import {MatSnackBarModule} from '@angular/material/snack-bar'
 @NgModule({
   declarations: [
     AppComponent,
@@ -51,7 +51,8 @@ import {MatTooltipModule} from '@angular/material/tooltip';
     MatIconModule,
     NgImageSliderModule,
     MatTableModule ,
-    MatTooltipModule
+    MatTooltipModule,
+    MatSnackBarModule
   ],
   providers: [httpService],
   bootstrap: [AppComponent]

@@ -1,24 +1,195 @@
 .form-container {
-    max-width: 400px;
-    margin: 2rem auto;
+  max-width: 400px;
+  margin: 2rem auto;
+  padding: 1rem 2rem;
+  background: linear-gradient(135deg, #1e88e5, #42a5f5);
+  border-radius: 10px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  color: white;
+}
+
+mat-error {
+  color: white;
+}
+
+h2 {
+  text-align: center;
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  font-family: 'Roboto', sans-serif;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.full-width {
+  width: 100%;
+  margin-bottom: 1.2rem;
+}
+
+.mat-form-field {
+  background: white;
+  border-radius: 5px;
+  padding: 5px 10px;
+}
+
+.mat-form-field .mat-label {
+  color: #1e88e5 !important;
+}
+
+.mat-form-field input {
+  font-size: 1rem;
+}
+
+button {
+  width: 100%;
+  background: #ff5722 !important;
+  color: white !important;
+  font-weight: bold;
+  padding: 0.8rem;
+  border-radius: 5px;
+  letter-spacing: 1px;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background: #e64a19 !important;
+}
+
+.container {
+  display: flex;
+  justify-content: space-around;
+  gap: 2rem;
+}
+
+.qrcode {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.qrcode img {
+  max-width: 200px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.qrcode .upiID {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #ff5722;
+  margin-top: 10px;
+}
+
+.qrcode .copyIcon {
+  margin-left: 5px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  color: #ff5722;
+  transition: transform 0.2s;
+}
+
+.qrcode .copyIcon:hover {
+  transform: scale(1.2);
+}
+
+.qrcode div {
+  font-size: 1rem;
+  font-family: 'Roboto', sans-serif;
+}
+
+.qrcode span {
+  color: #212121;
+  font-weight: bold;
+}
+
+
+/* responvie css  */
+
+/* Responsive Layout Adjustments */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
     padding: 1rem;
   }
-  
-  .full-width {
-    width: 100%;
-    margin-bottom: 1rem;
+
+  .qrcode {
+    width: 90%;
+    margin: 1rem auto;
+  }
+
+  .qrcode img {
+    max-width: 150px;
+    margin: 1rem 0;
+  }
+
+  .qrcode .upiID {
+    font-size: 1rem;
+  }
+
+  .qrcode span {
+    font-size: 1rem;
+  }
+
+  .qrcode div {
+    font-size: 0.9rem;
+  }
+
+  .form-container {
+    width: 90%;
+    padding: 1rem 1.5rem;
+    margin: 1rem auto;
   }
 
   h2 {
-    margin-bottom: 10px;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
   }
 
-  .container {
-    display: flex ;
-    justify-content: space-around ;
+  .mat-form-field {
+    margin-bottom: 1rem;
   }
 
-  
-.qrcode{
-  margin-top: 5rem;
+  button {
+    padding: 0.7rem;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .qrcode img {
+    max-width: 120px;
+  }
+
+  .qrcode .upiID {
+    font-size: 0.9rem;
+  }
+
+  .qrcode span {
+    font-size: 0.9rem;
+  }
+
+  .qrcode div {
+    font-size: 0.8rem;
+  }
+
+  .form-container {
+    width: 95%;
+    padding: 0.8rem 1rem;
+  }
+
+  h2 {
+    font-size: 1.3rem;
+    margin-bottom: 0.8rem;
+  }
+
+  button {
+    font-size: 0.8rem;
+    padding: 0.5rem;
+  }
+
+
 }

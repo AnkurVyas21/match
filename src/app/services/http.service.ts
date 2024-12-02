@@ -60,7 +60,7 @@ export class httpService {
     let apiUrl = '';
     if (apiSlug)
       apiUrl =
-        'localhost:3000' +
+        'http://localhost:3000' +
         '/' +
         apiSlug;
     return apiUrl;

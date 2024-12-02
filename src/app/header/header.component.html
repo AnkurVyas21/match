@@ -1,23 +1,30 @@
 <mat-toolbar class="topHeader">
     <div class="icon">
         <!-- <span ><img src="/src/assets/logo.jpg" alt="logo"></span> -->
-        <span >Bharat Sports</span>
+        <a class="fa fa-phone" href="https://www.facebook.com/share/14hwrvr3Ae/?mibextid=LQQJ4d"> +919321524122</a>
+        <a class="fa fa-envelope" href="https://www.youtube.com/@bhaarathSports"> {{'bpl@mailinator.com'}}</a>
     </div>
     <div class="socialMedia">
+      <span>Follow Us |</span>
       <a class="fa fa-facebook" href="https://www.facebook.com/share/14hwrvr3Ae/?mibextid=LQQJ4d"></a>
       <a class="fa fa-youtube" href="https://www.youtube.com/@bhaarathSports"></a>
-      <a class="fa fa-linkedin" href="https://www.instagram.com/bpl.sports_?igsh=cGNvYjBjaXN6aWsx&utm_source=qr"></a>
+      <a class="fa fa-whatsapp" href="https://www.instagram.com/bpl.sports_?igsh=cGNvYjBjaXN6aWsx&utm_source=qr"></a>
       <a class="fa fa-instagram" href="https://www.instagram.com/bpl.sports_?igsh=cGNvYjBjaXN6aWsx&utm_source=qr"></a> 
     </div>
       
   </mat-toolbar>
 
-<mat-toolbar style="background-color: rgb(52, 51, 51); color: white;">
-    <span><img src="/src/assets/smalllogo.png" alt="logo" class="logoImage"></span>
-    <span class="spacer"></span>
+<mat-toolbar class="secondTopHeader">
+  <div>
+    <span><img src="./assets/smalllogo.png" alt="logo" class="logoImage"></span>
+    <span style="font-size: 25px;">Bharat Premier League</span>
+</div>    
+<div>
+ 
+  <button mat-button routerLink="/home" routerLinkActive="active">Home</button>
+  <button mat-button routerLink="/form1" routerLinkActive="active">Player Registration</button>
+  <button mat-button routerLink="/form2" routerLinkActive="active">Franchise Registration
+    </button>
+</div>
     
-    <button mat-button routerLink="/home" routerLinkActive="active">Home</button>
-    <button mat-button routerLink="/form1" routerLinkActive="active">Player Registration</button>
-    <button mat-button routerLink="/form2" routerLinkActive="active">Franchise Registration
-      </button>
   </mat-toolbar>

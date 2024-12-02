@@ -7,7 +7,7 @@
    
   </form>
   <div class="download" (click)="downloadFile()" matTooltip="Download XML file">
-    <a class="fa fa-download"> Download</a>
+    <a class="fa fa-download"> Export</a>
 </div>
 </div>
 
@@ -29,64 +29,64 @@
     
       <!-- Weight Column -->
       <ng-container matColumnDef="address">
-        <th mat-header-cell *matHeaderCellDef> Weight </th>
+        <th mat-header-cell *matHeaderCellDef> Address </th>
         <td mat-cell *matCellDef="let element"> {{element.address}} </td>
       </ng-container>
     
       <!-- Symbol Column -->
       <ng-container matColumnDef="mobile">
-        <th mat-header-cell *matHeaderCellDef> Symbol </th>
+        <th mat-header-cell *matHeaderCellDef> Mobile </th>
         <td mat-cell *matCellDef="let element"> {{element.mobile}} </td>
       </ng-container>
 
 
          <!-- Symbol Column -->
          <ng-container matColumnDef="role">
-          <th mat-header-cell *matHeaderCellDef> Symbol </th>
+          <th mat-header-cell *matHeaderCellDef> Role </th>
           <td mat-cell *matCellDef="let element"> {{element.role}} </td>
         </ng-container>
     
         
            <!-- Symbol Column -->
       <ng-container matColumnDef="batting_handedness">
-        <th mat-header-cell *matHeaderCellDef> Symbol </th>
+        <th mat-header-cell *matHeaderCellDef> Batting Handedness </th>
         <td mat-cell *matCellDef="let element"> {{element.batting_handedness}} </td>
       </ng-container>
     
     
               <!-- Symbol Column -->
               <ng-container matColumnDef="bowling_handedness">
-                <th mat-header-cell *matHeaderCellDef> Symbol </th>
+                <th mat-header-cell *matHeaderCellDef> Bowling Handedness </th>
                 <td mat-cell *matCellDef="let element"> {{element.bowling_handedness}} </td>
               </ng-container>
     
                       <!-- Symbol Column -->
       <ng-container matColumnDef="j_name">
-        <th mat-header-cell *matHeaderCellDef> Symbol </th>
+        <th mat-header-cell *matHeaderCellDef> Jersy Name </th>
         <td mat-cell *matCellDef="let element"> {{element.j_name}} </td>
       </ng-container>
     
               <!-- Symbol Column -->
               <ng-container matColumnDef="j_size">
-                <th mat-header-cell *matHeaderCellDef> Symbol </th>
+                <th mat-header-cell *matHeaderCellDef> Jersy Size </th>
                 <td mat-cell *matCellDef="let element"> {{element.j_size}} </td>
               </ng-container>
     
                       <!-- Symbol Column -->
       <ng-container matColumnDef="j_number">
-        <th mat-header-cell *matHeaderCellDef> Symbol </th>
+        <th mat-header-cell *matHeaderCellDef> Jersy Number </th>
         <td mat-cell *matCellDef="let element"> {{element.j_number}} </td>
       </ng-container>
     
               <!-- Symbol Column -->
               <ng-container matColumnDef="j_type">
-                <th mat-header-cell *matHeaderCellDef> Symbol </th>
+                <th mat-header-cell *matHeaderCellDef> Jersy Type </th>
                 <td mat-cell *matCellDef="let element"> {{element.j_type}} </td>
               </ng-container>
     
                       <!-- Symbol Column -->
       <ng-container matColumnDef="utr">
-        <th mat-header-cell *matHeaderCellDef> Symbol </th>
+        <th mat-header-cell *matHeaderCellDef> UTR/UPI Reference Number </th>
         <td mat-cell *matCellDef="let element"> {{element.utr}} </td>
       </ng-container>
             

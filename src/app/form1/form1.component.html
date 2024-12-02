@@ -1,8 +1,16 @@
 <div class="container">
+  
   <div class="qrcode">
+    <div>
+      <span style="font-size: large;font-weight: bold ">Amount : 500 INR</span>
+    </div>
     <img src="https://www.researchgate.net/profile/Vinod-Shukla/publication/340398294/figure/fig3/AS:876175308103681@1585907880294/Sample-Figure-of-QR-Code-QR-code-works-in-a-simple-way-It-all-starts-of-by-feeding-in.ppm">
+    <div style="margin-top: 10px;">UPI ID : <span class="upiID">{{upiID}}<mat-icon (click)="copyToClipboard(upiID)" class="copyIcon">file_copy</mat-icon></span></div>
     <div style="margin-top: 10px;">Scan and pay to get UTR/UPI Reference Number</div>
    </div>
+
+
+
   <div>
     <mat-card class="form-container">
         <form [formGroup]="form" (ngSubmit)="onSubmit()">
@@ -15,8 +23,11 @@
             <mat-error *ngIf="form.get('name')?.hasError('required')">
               Name is required
             </mat-error>
-            <mat-error *ngIf="form.get('name')?.hasError('minlength')">
+            <mat-error *ngIf="form.get('name')?.hasError('minlength') && !form.get('name')?.hasError('pattern')">
               Name must be at least 3 characters
+            </mat-error>
+            <mat-error *ngIf="form.get('name')?.hasError('pattern')">
+              Special characters are not allowed
             </mat-error>
           </mat-form-field>
   
@@ -66,7 +77,7 @@
                <!-- batting Input -->
                <mat-form-field appearance="fill" class="full-width">
                 <mat-label>Batting Handedness</mat-label>
-                <mat-select formControlName="batting_handedness" placeholder="Select your role" >
+                <mat-select formControlName="batting_handedness" placeholder="Select your batting handedness" >
                   <mat-option *ngFor="let hand of handedness" [value]="hand" >
                     {{ hand }}
                   </mat-option>
@@ -80,7 +91,7 @@
                    <!-- bowling Input -->
           <mat-form-field appearance="fill" class="full-width">
             <mat-label>Bowling Handedness</mat-label>
-            <mat-select formControlName="bowling_handedness" placeholder="Select your role" >
+            <mat-select formControlName="bowling_handedness" placeholder="Select your bowling handedness" >
               <mat-option *ngFor="let hand of handedness" [value]="hand" >
                 {{ hand }}
               </mat-option>
@@ -94,12 +105,15 @@
              <!-- Jersy Name Input -->
              <mat-form-field appearance="fill" class="full-width">
               <mat-label>Jersy Name</mat-label>
-              <input matInput formControlName="j_name" placeholder="Enter your name"  />
+              <input matInput formControlName="j_name" placeholder="Enter your jersy name"  />
               <mat-error *ngIf="form.get('j_name')?.hasError('required')">
                 Jersy Name is required
               </mat-error>
-              <mat-error *ngIf="form.get('j_name')?.hasError('minlength')">
+              <mat-error *ngIf="form.get('j_name')?.hasError('minlength') && !form.get('j_name')?.hasError('pattern')">
                 Jersy Name must be at least 3 characters
+              </mat-error>
+              <mat-error *ngIf="form.get('j_name')?.hasError('pattern')">
+                Special characters are not allowed
               </mat-error>
             </mat-form-field>
     
@@ -107,7 +121,7 @@
                <!-- hand Input -->
                <mat-form-field appearance="fill" class="full-width">
                 <mat-label>Jersy Size</mat-label>
-                <mat-select formControlName="j_size" placeholder="Select your role">
+                <mat-select formControlName="j_size" placeholder="Select your jersy size">
                   <mat-option *ngFor="let size of j_size" [value]="size">
                     {{ size }}
                   </mat-option>
@@ -120,12 +134,15 @@
           <!-- Jersy number Input -->
           <mat-form-field appearance="fill" class="full-width">
             <mat-label>Jersy Number</mat-label>
-            <input matInput formControlName="j_number" placeholder="Enter your name" type="number" max="999" />
+            <input matInput formControlName="j_number" placeholder="Enter your jersy number" type="number" max="999" min="1" />
             <mat-error *ngIf="form.get('j_number')?.hasError('required')">
               Jersy Number is required
             </mat-error>
             <mat-error *ngIf="form.get('j_number')?.hasError('max')">
               Jersey Number must not exceed three digits
+            </mat-error>
+            <mat-error *ngIf="form.get('j_number')?.hasError('min')">
+              Jersey Number cannot be less than 1
             </mat-error>
           </mat-form-field>
   
@@ -134,7 +151,7 @@
      <!-- type Input -->
      <mat-form-field appearance="fill" class="full-width">
       <mat-label>Jersy Type</mat-label>
-      <mat-select formControlName="j_type" placeholder="Select your role">
+      <mat-select formControlName="j_type" placeholder="Select your jersy type">
         <mat-option *ngFor="let type of jtype" [value]="type">
           {{ type }}
         </mat-option>

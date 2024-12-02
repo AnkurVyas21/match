@@ -1,5 +1,5 @@
 div {
-    margin: 40px;
+    margin-top: 30px;
     height: 500px;
 }
 
@@ -8,3 +8,58 @@ div {
     width: 300px;
 } 
 
+
+/* responsie css  */
+/* General Mobile Styles */
+@media screen and (max-width: 768px) {
+    /* Container Adjustments */
+    div {
+      margin-top: 15px; /* Reduce top margin */
+      height: auto; /* Allow height to adjust based on content */
+      padding: 0 10px; /* Add padding for better spacing */
+    }
+  
+    /* Image Slider Adjustments */
+    ng-image-slider {
+      width: 100%; /* Ensure slider fits the screen */
+      height: auto; /* Adjust height automatically */
+    }
+  
+    /* Size of Thumbnails */
+    .sizeThumb {
+      height: 150px; /* Reduce height for smaller screens */
+      width: 200px; /* Reduce width for better fit */
+    }
+  }
+  
+  /* Further adjustments for very small screens */
+  @media screen and (max-width: 480px) {
+    div {
+      margin-top: 10px; /* Further reduce margin */
+      padding: 0 5px; /* Narrower padding */
+    }
+  
+    /* Image Slider Adjustments */
+    ng-image-slider {
+      width: 100%; /* Maintain full-width slider */
+      height: auto; /* Adjust height based on content */
+    }
+  
+    /* Size of Thumbnails */
+    .sizeThumb {
+      height: 100px; /* Further reduce thumbnail size */
+      width: 150px; /* Narrower thumbnails */
+    }
+  }
+
+  div {
+    margin-top: 30px;
+    width: 100%; /* Ensure the container adjusts with screen size */
+  }
+  
+  ng-image-slider {
+    display: block;
+    margin: 0 auto; /* Center the slider */
+  }
+  
+  
